@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './ListProduct.css'
 import cross_icon from '../../assets/cross_icon.png'
 const ListProduct = () => {
-
+      const API='https://e-comerce-api-nq04.onrender.com';
       const [allproducts,setAllProducts] = useState([]);
 
       const fetchInfo = async () =>{
@@ -42,7 +42,7 @@ const ListProduct = () => {
         {allproducts.map((product,index)=>{
           return <>
             <div key = {index} className='listproduct-format-main listproduct-format'>
-                <img src='https://e-comerce-api-nq04.onrender.com'+{product.image} alt="" className="listproduct-product-icon" />
+                <img src={`${API}${product.image}`} alt="" className="listproduct-product-icon" />
                 <p>{product.name}</p>
                 <p>${product.old_price}</p>
                 <p>${product.new_price}</p>
